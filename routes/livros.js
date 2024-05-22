@@ -41,6 +41,8 @@ router.put('/novoEmprestimo/:livro_id', async (req, res, next) => {
         values: [livro_id]
     })
     
+    console.log(livro.rows)
+
     if(!livro.rows[0]) return res.status(401).send('Livro não encontrado')
 
     const quantidade = livro.rows[0].quantidade
